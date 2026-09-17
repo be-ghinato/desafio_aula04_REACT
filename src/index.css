@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Karla:wght@400;500;700&display=swap');
+
+:root {
+  --papel: #f6efe3;
+  --papel-velho: #efe4cf;
+  --tinta: #2e2119;
+  --tinta-suave: #6b5a4c;
+  --terracota: #c1502e;
+  --vinho: #7a3b2e;
+  --salsa: #5c6b3c;
+  --ouro: #d9a441;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  color: var(--tinta);
+  background-color: var(--papel);
+  background-image:
+    radial-gradient(#d8c9ac 1px, transparent 1px),
+    radial-gradient(#d8c9ac 1px, transparent 1px);
+  background-size: 26px 26px;
+  background-position: 0 0, 13px 13px;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, .marca {
+  font-family: 'Fraunces', serif;
+}
+
+/* ---------- moldura geral ---------- */
+.pagina {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- header ---------- */
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px 0 14px;
+  border-bottom: 3px double var(--tinta);
+}
+
+.marca {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--tinta);
+}
+
+.marca .til { color: var(--terracota); font-style: italic; }
+
+.menu { display: flex; gap: 6px; }
+
+.menu a {
+  text-decoration: none;
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.menu a:hover { border-color: var(--tinta); background: var(--papel-velho); }
+
+.menu a.ativo {
+  background: var(--terracota);
+  color: var(--papel);
+  border-color: var(--terracota);
+}
+
+/* ---------- conteúdo ---------- */
+.conteudo { flex: 1; padding-top: 40px; }
+
+.chamada {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  font-weight: 600;
+}
+
+.chamada em { color: var(--terracota); font-style: italic; }
+
+.subtexto { font-size: 1.1rem; color: var(--tinta-suave); max-width: 56ch; }
+
+.etiqueta {
+  display: inline-block;
+  background: var(--ouro);
+  color: var(--tinta);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  transform: rotate(-1.5deg);
+  margin-bottom: 18px;
+}
+
+/* ---------- contador de mesa ---------- */
+.quadro-mesa {
+  margin-top: 44px;
+  border: 2px solid var(--tinta);
+  border-radius: 14px;
+  background: var(--papel-velho);
+  padding: 22px 26px;
+  max-width: 460px;
+  box-shadow: 6px 6px 0 rgba(46, 33, 25, 0.16);
+}
+
+.quadro-mesa h2 { margin: 0 0 6px; font-size: 1.35rem; }
+.quadro-mesa p { margin: 0 0 16px; color: var(--tinta-suave); }
+
+.contador { display: flex; align-items: center; gap: 16px; }
+
+.contador .numero {
+  font-family: 'Fraunces', serif;
+  font-size: 3rem;
+  min-width: 64px;
+  text-align: center;
+}
+
+.prato {
+  width: 74px; height: 74px;
+  border-radius: 50%;
+  background: var(--papel);
+  border: 2px dashed var(--tinta-suave);
+  display: grid;
+  place-items: center;
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--terracota);
+  overflow: hidden;
+}
+
+/* ---------- botões ---------- */
+button {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 2px solid var(--tinta);
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 10px;
+  padding: 9px 16px;
+  box-shadow: 3px 3px 0 var(--tinta);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--tinta); }
+button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--tinta); }
+
+button.terracota { background: var(--terracota); color: var(--papel); }
+button.perigo { background: var(--vinho); color: var(--papel); }
+
+/* ---------- lista de receitas ---------- */
+.painel-lista { margin-top: 28px; }
+
+.form-receita {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+  padding: 18px;
+  border: 2px dashed var(--tinta-suave);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+input, select {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.95rem;
+  padding: 9px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 8px;
+  background: var(--papel);
+  color: var(--tinta);
+}
+
+input:focus, select:focus { outline: 3px solid rgba(193, 80, 46, 0.25); }
+input.nome-receita { flex: 2 1 220px; }
+
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cartao {
+  position: relative;
+  background: #fffdf7;
+  border: 1.5px solid var(--tinta);
+  border-radius: 4px;
+  padding: 26px 18px 16px;
+  box-shadow: 4px 5px 0 rgba(46, 33, 25, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.15s ease;
+}
+
+.cartao:nth-child(odd) { transform: rotate(-0.8deg); }
+.cartao:nth-child(even) { transform: rotate(0.7deg); }
+.cartao:hover { transform: rotate(0) translateY(-3px); }
+
+/* fita adesiva */
+.cartao::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 92px;
+  height: 24px;
+  background: rgba(217, 164, 65, 0.75);
+  border-left: 1px dashed rgba(46, 33, 25, 0.4);
+  border-right: 1px dashed rgba(46, 33, 25, 0.4);
+}
+
+.cartao h3 { margin: 0; font-size: 1.25rem; }
+.cartao .categoria {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--salsa);
+}
+.cartao .nota { margin: 0; color: var(--tinta-suave); font-size: 0.92rem; flex: 1; }
+
+.cartao .acoes { display: flex; justify-content: flex-end; margin-top: 8px; }
+
+.cartao .remover {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--vinho);
+  border-color: var(--vinho);
+  box-shadow: 2px 2px 0 var(--vinho);
+}
+.cartao .remover:hover { background: var(--vinho); color: var(--papel); }
+
+.lista-vazia {
+  text-align: center;
+  padding: 48px 20px;
+  border: 2px dashed var(--tinta-suave);
+  border-radius: 12px;
+  color: var(--tinta-suave);
+}
+
+/* ---------- sobre ---------- */
+.dois-blocos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-top: 32px;
+}
+
+.bloco {
+  border: 2px solid var(--tinta);
+  border-radius: 12px;
+  background: var(--papel-velho);
+  padding: 22px;
+}
+
+.bloco h2 { margin-top: 0; }
+.bloco p { color: var(--tinta-suave); line-height: 1.6; }
+
+/* ---------- 404 ---------- */
+.erro-404 { text-align: center; padding-top: 60px; }
+.erro-404 .codigo {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(5rem, 18vw, 9rem);
+  margin: 0;
+  color: var(--terracota);
+  line-height: 1;
+}
+
+/* ---------- rodapé ---------- */
+.rodape {
+  margin-top: 60px;
+  padding-top: 18px;
+  border-top: 3px double var(--tinta);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+}
